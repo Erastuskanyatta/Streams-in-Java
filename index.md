@@ -11,12 +11,12 @@ For this tutorial, it is advisable to have:
 1. An  `IDEA` of your choice installed. In this tutorial I will be using [IntelliJ IDEA](https://www.jetbrains.com/idea/).
 
 
-### Table of contents
-1. Imperative Vs Fuctional Programmimg
-2. Creating a stream
-3. Mapping Elements
-4. Filtering Elements
-5. Sorting Streams
+### Table of content
+1. [Imperative Vs Fuctional Programmimg](#1-imperative-vs-fuctional-programmimg)
+2. [Creating a stream](#2-creating-a-stream)
+3. [ Mapping Elements](#3-mapping-elements)
+4. [Filtering Elements](#4-filtering-elements)
+5. [Sorting Streams](#5-sorting-streams)
 
 #### Why use Streams?
 1. *Mimimum code Error*.  Streams are performed out in a step by step manner therefore preventing unnecessary bugs and code error.
@@ -173,7 +173,7 @@ public class howToCreateStream {
     }
 ```
 
- The ` Math.random()` object generates infinite random numbers.
+ The `Math.random()` object generates infinite random numbers.
  `.foreach` request new number from stream and prints it.
 
 On executing the snippet, you will get an infinite random numbers generated.
@@ -204,6 +204,57 @@ The output of the snippet will be:
 0.10413495837663422
 ```
 ### 3. Mapping Elements
+This is the transformation of stream object to new objects. This is done using the `map()` and `flatMap()` methods.
+
+In book.java class, let's us generate another getter called `getAuthor()` that returns the authors of the book. This will be as shown below;
+
+```java
+ ---
+  public String getAuthor() {
+        return author;
+    }
+ ---
+```
+
+In the main class, where we have a list of books, let's create a stream of authors.  Replace the code in the main class with the one below;
+
+```java
+import java.util.List;
+public class main {
+    public static void main(String [] args){
+        List<book> books= List.of(
+                new book("x", "Paul", 578),
+                new book("y", "james", 800),
+                new book("z", "Rich", 400),
+                new book("v", "Ann", 600)
+        );
+        books.stream() 
+                .map(movies -> movies.getAuthor())
+                .forEach(author-> System.out.println(author));
+    }
+}
+```
+The `books.stream()` object creates a stream from the list of books.
+
+The .map() get the books object and extract the author.
+
+On running the snippet above, you will get the following output:
+
+```bash
+Paul
+james
+Rich
+Ann
+```
+
+### 4. Filtering Elements
+
+### 5. Sorting Elements
+
 
 ### Wrapping up
+
+### Further reading
+[Java Streams](https://www.baeldung.com/java-streams)
+
 
