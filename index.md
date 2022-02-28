@@ -1,4 +1,4 @@
-Streams are one of the  powerful features of [Java](https://www.java.com/en/). 
+Streams are one of the powerful features of [Java](https://www.java.com/en/). 
 They allow developers to process a collection of data in a declarative manner. This makes code clean and concise.
 
 A stream is a collection of objects that can be piped together to generate a particular outcome.
@@ -20,17 +20,17 @@ For this tutorial, the reader would need to have:
 
 #### Why use Streams?
 1. *Minimum code Error*. Streams are performed step-by-step, preventing unnecessary bugs and code errors.
-2. *Code is more Intuitive*. A code with streams is easy to understand and does not require too much thinking.
+2. *Code is more Intuitive*. A code with streams is easy to understand and does not require much thinking.
 3. *Verbose code*. This type of code needs more /longer words to describe what is going on. By using stream, you can chope off some codes making the code less verbose.
 
 ### 1. Imperative Vs Fuctional Programmimg
 Before we start looking at the streams, we need to understand the kind of problem they solve. 
 
-Let's say we have a `class book` with the `title`, the `author` of the book and the number of `pages`.
+Let's say we have a `class book` with the `title,` the `author` of the book, and the number of `pages.`
 
-In this `class book`, we want to count the number of books titles with more than 600 pages.
+We want to count the number of books titles with more than 600 pages in this 'class book.'
 
-To perform this task, let's create a new directory, `Streams` in the IntelliJ IDEA. Create a `book.java` class and `main.java` class in `/Streams`, and add the following code snippets, respectively.
+Let's create a new directory, `Streams` in the IntelliJ IDEA, to perform this task. Create a `book.java` class and `main.java` class in `/Streams,` and add the following code snippets, respectively.
 
 ```java
 public class book {
@@ -51,7 +51,7 @@ public class book {
 }
 ``` 
 
->Note: To generate the constructor in the snippet above, right-click and select the `generate` option. In `/generate/constructor`, choose the fields you want the constructor to initialize and hit ok. In our case, we will select all.
+>Note: To generate the constructor in the snippet above, right-click and select the `generate` option. In `/generate/constructor,` choose the fields you want the constructor to initialize and hit ok. In our case, we will select all.
 
 ```java
 import java.util.List;
@@ -72,13 +72,13 @@ public class main {
 }
 ```
 
-We have created a list of books called `books` in the main class. We have used `List.of();` to initialize four books.
+We have created a list of `books` in the main class. We have used `List.of();` to initialize four books.
 
-We have used the' Imperative programming' method to get the number of books with more than 600 pages.
+We have used the' Imperative programming' method to get books with more than 600 pages.
 
 Imperative programming is a style of programming where we have a statement that specifies how the number of books should be counted.
 
-We use the `Streams` to process the collection of data in a declarative/ functional programming approach. Functional programming brings in some additional concepts.
+We use the `Streams` to process data collection in a declarative/ functional programming approach. Functional programming brings in some additional concepts.
 
 Add the code snippet below after the `count++` increment in the main class. The snippet is written in a functional programming approach.
 
@@ -91,17 +91,17 @@ var count1 = books.stream()
 ...                
 ```
 
-In the above example(declarative programming), we have used a stream object with several methods, e.g.` filter(predicate)`, which filters data based on the given condition. i.e. (`book -> book.getPages() > 600`)
+In the above example(declarative programming), we have used a stream object with several methods, e.g.,` filter(predicate),` which filters data based on the given condition. i.e. (`book -> book.getPages() > 600`)
 >Note. A predicate is a function that takes an object and returns a boolean.
 
 `.cout()` method counts the number of movies.
 
-Unlike imperative programming, in functional Programming, we don't have statements like int count = 0; or count++;.  This makes our code cleaner and easy to understand. 
+Unlike imperative programming, in functional programming, we don't have statements like int count = 0; or count++;.  This makes our code cleaner and easy to understand. 
 
 ### 2. Creating a stream
 We have looked at the problem that streams solve. Let's now focus on creating a stream.
 
-Streams can be created in different ways. These include:
+Streams are created in different ways. These include:
 >1. From collection. 
 
 >2. From arrays.
@@ -109,7 +109,7 @@ Streams can be created in different ways. These include:
 >3. From an arbitrary number of objects.
 
 #### From collection.
-In the `/Streams` directory, create `howToCreateStream.java` class and add the snippet below:
+In the `/Streams` directory, create the `howToCreateStream.java` class and add the snippet below:
 
 ```java
 import java.util.Collection;
@@ -123,7 +123,7 @@ public class howToCreateStream {
 ```
 
 #### From arrays.
-Replace the code snippet in howToCreateStream.java with the one below:
+Replace the code snippet in `howToCreateStream.java` with the one below:
 
 ```java
 mport java.util.ArrayList;
@@ -179,7 +179,7 @@ public class howToCreateStream {
 
 On executing the snippet, you will get an infinite random number generated.
 
-We can call the `limit()` method and define the random numbers we want to generate to prevent this.
+To prevent this, we can call the `limit()` method and define the random numbers we want to generate.
 
 For instance, let's generate five random numbers:
 
@@ -273,9 +273,9 @@ Output:
 [mango-juice, sprite, crest]
 ```
 
-In the above example, we have created a stream using tha `Stream.of()` method. We have passed two list objects. i,e list of `fruits` and list of `drinks`
+We have created a stream using the `Stream.of()` method in the above example. We have passed two list-objects. i,e list of `fruits` and `drinks.`
 
-What if we dont want to work with list? What if we want to work with individual fruits and drinks? 🤔 This is where the flatMap() comes to rescue.
+What if we don't want to work with the list? What if we're going to work with individual fruits and drinks? 🤔 This is where the flatMap() comes to the rescue.
 
 Replace the code snippet in the main class with the one below:
 
@@ -304,12 +304,12 @@ sprite
 crest
 ```
 
-In our snippet, we have used the .flatMap() method to convert the  stream of list of objects to stream of individual objects. 
+In the snippet, we have used the .flatMap() method to convert the list of objects to a stream of individual objects. 
 
 ### 4. Obtaining Unique Elements
-The `.distinct()` method is used to remove duplicate elements from the stream. 
+The `.distinct()` method removes duplicate elements from the stream. 
 
-Let's us run the snippet below to understand this concept.
+Let's run the snippet below to understand this concept.
 
 ```java
 import java.util.List;
@@ -369,7 +369,7 @@ On rerunning, we get the output below:
 ```
 
 ### Wrapping up
-In this tutorial, we have looked at the basic concepts of streams. For instance, we have seen how to create a stream from a collection. Java streams represent a data pipeline and the functions that will be used to manipulate the data.
+In this tutorial, we have looked at the basic concepts of streams. For instance, we have seen how to create a stream from a collection. Java streams represent a data pipeline and the functions used to manipulate the data.
 
 Happy Learning!
 
