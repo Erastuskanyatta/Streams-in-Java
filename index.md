@@ -6,15 +6,16 @@ A stream is a collection of objects that can be piped together to generate a par
 Streams are created from either collection, arrays, or an arbitrary number of objects.
 
 ### Prerequisites
-1. Basic knowledge of Java programming 
-2. An  `IDEA` of your choice installed. I will be using [IntelliJ IDEA](https://www.jetbrains.com/idea/).
+For this tutorial, the reader would need to have:
+- Basic knowledge of Java programming 
+- An  `IDEA`  installed. I will be using [IntelliJ IDEA](https://www.jetbrains.com/idea/).
 
 
 ### Table of content
-1. [Imperative Vs Fuctional Programmimg](#1-imperative-vs-fuctional-programmimg)
-2. [Creating a stream](#2-creating-a-stream)
-3. [ Mapping Elements](#3-mapping-elements)
-4. [Obtaining Unique Elements](#4-obtaining-unique-elements)
+- [Imperative Vs Fuctional Programmimg](#1-imperative-vs-fuctional-programmimg)
+- [Creating a stream](#2-creating-a-stream)
+- [ Mapping Elements](#3-mapping-elements)
+- [Obtaining Unique Elements](#4-obtaining-unique-elements)
 
 
 #### Why use Streams?
@@ -77,7 +78,7 @@ We have used the' Imperative programming' method to get the number of books with
 
 Imperative programming is a style of programming where we have a statement that specifies how the number of books should be counted.
 
-We use the ' Streams' to process the collection of data in a declarative/ functional programming approach. Functional programming brings in some additional concepts.
+We use the `Streams` to process the collection of data in a declarative/ functional programming approach. Functional programming brings in some additional concepts.
 
 Add the code snippet below after the `count++` increment in the main class. The snippet is written in a functional programming approach.
 
@@ -248,6 +249,7 @@ james
 Rich
 Ann
 ```
+
 Let's now use the `flatMap()`. 
 
 Replace the code snippet in the main class with the one below:
@@ -270,6 +272,7 @@ Output:
 [mango, orange, passion]
 [mango-juice, sprite, crest]
 ```
+
 In the above example, we have created a stream using tha `Stream.of()` method. We have passed two list objects. i,e list of `fruits` and list of `drinks`
 
 What if we dont want to work with list? What if we want to work with individual fruits and drinks? 🤔 This is where the flatMap() comes to rescue.
@@ -300,6 +303,7 @@ mango-juice
 sprite
 crest
 ```
+
 In our snippet, we have used the .flatMap() method to convert the  stream of list of objects to stream of individual objects. 
 
 ### 4. Obtaining Unique Elements
@@ -338,9 +342,22 @@ The output of the snippet will be:
 In the output, we have a duplicate of 900. To get a unique 900, let's add  `.distinct()` method before the `forEach()` method.
 
 ```java
----
-.distinct()
----
+import java.util.List;
+public class main {
+    public static void main(String [] args){
+        var books =List.of(
+                new book("w", "Paul", 900),
+                new book("x", "Paul", 578),
+                new book("y", "James", 900),
+                new book("z", "Rich", 400),
+                new book("v", "Ann", 900)
+        );
+        books.stream() //returning a stream of books
+                .map(n -> n.getPages()) //returning a stream of integers
+                .distinct() // new
+                .forEach(System.out::println);
+    }
+}
 ```
 
 On rerunning, we get the output below:
@@ -353,6 +370,8 @@ On rerunning, we get the output below:
 
 ### Wrapping up
 In this tutorial, we have looked at the basic concepts of streams. For instance, we have seen how to create a stream from a collection. Java streams represent a data pipeline and the functions that will be used to manipulate the data.
+
+Happy Learning!
 
 ### Further reading
 1. [Primitive Type Streams in Java 8](https://www.baeldung.com/java-8-primitive-streams)
