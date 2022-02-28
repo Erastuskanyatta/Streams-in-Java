@@ -1,5 +1,4 @@
-### Getting Started with Streams in Java
-Streams are one of the most powerful features of Java. 
+Streams are one of the  powerful features of [Java](https://www.java.com/en/). 
 They allow developers to process a collection of data in a declarative manner. This makes code clean and concise.
 
 A stream is a collection of objects that can be piped together to generate a particular outcome.
@@ -7,9 +6,8 @@ A stream is a collection of objects that can be piped together to generate a par
 Streams are created from either collection, arrays, or an arbitrary number of objects.
 
 ### Prerequisites
-For this tutorial, it is advisable to have:
 1. Basic knowledge of Java programming 
-1. An  `IDEA` of your choice installed. I will be using [IntelliJ IDEA](https://www.jetbrains.com/idea/).
+2. An  `IDEA` of your choice installed. I will be using [IntelliJ IDEA](https://www.jetbrains.com/idea/).
 
 
 ### Table of content
@@ -33,7 +31,7 @@ In this `class book`, we want to count the number of books titles with more than
 
 To perform this task, let's create a new directory, `Streams` in the IntelliJ IDEA. Create a `book.java` class and `main.java` class in `/Streams`, and add the following code snippets, respectively.
 
-```Java
+```java
 public class book {
     private String title;
     private String author;
@@ -83,7 +81,7 @@ We use the ' Streams' to process the collection of data in a declarative/ functi
 
 Add the code snippet below after the `count++` increment in the main class. The snippet is written in a functional programming approach.
 
-```Java
+```java
 ...
 // declarative/ functional programming approach
 var count1 = books.stream()
@@ -91,6 +89,7 @@ var count1 = books.stream()
                 .count();
 ...                
 ```
+
 In the above example(declarative programming), we have used a stream object with several methods, e.g.` filter(predicate)`, which filters data based on the given condition. i.e. (`book -> book.getPages() > 600`)
 >Note. A predicate is a function that takes an object and returns a boolean.
 
@@ -210,7 +209,7 @@ This is the transformation of stream objects to new objects. This is done using 
 
 In book.java class, let's generate another getter called `getAuthor()` that returns the book's authors. This will be as shown below;
 
-```Java
+```java
  ---
   public String getAuthor() {
         return author;
@@ -236,6 +235,7 @@ public class main {
     }
 }
 ```
+
 The `books.stream()` object creates a stream from the list of books.
 
 The `.map()` get the book's object and extract the author.
@@ -334,6 +334,7 @@ The output of the snippet will be:
 400
 900
 ```
+
 In the output, we have a duplicate of 900. To get a unique 900, let's add  `.distinct()` method before the `forEach()` method.
 
 ```java
